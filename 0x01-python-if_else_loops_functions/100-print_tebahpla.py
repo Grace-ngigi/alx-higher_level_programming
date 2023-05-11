@@ -5,4 +5,4 @@ for i in range(0, 26):
         character = chr(character - ord('a') + ord('A'))
     else:
         character = chr(character)
-        print("{}".format(character), end="")
+    print("{}".format(character), end="")

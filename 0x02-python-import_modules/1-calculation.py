@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import calculation_1 as calc
+    import calculator_1 as calc
     a = 10
     b = 5
     c = calc.add(a, b)

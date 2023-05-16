@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * check_cycle - checks for a cycle in a linked list
  * @list: pointer to a struct

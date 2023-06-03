@@ -72,5 +72,5 @@ listint_t *sort_list(listint_t **head)
 			}
 		}
 	}
-	return (head);
+	return (*head);
 }

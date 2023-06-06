@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""An empty class defining a square"""
+"""An empty class defining a rectangle"""
 
 
-class Square:
-    """An empty class defining a square"""
+class Rectangle:
+    """An empty class defining a rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height

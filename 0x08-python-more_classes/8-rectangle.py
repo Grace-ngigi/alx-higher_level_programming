@@ -10,7 +10,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -48,14 +48,9 @@ class Rectangle:
 
     def __str__(self):
         """Print"""
-        result = ""
         if self.width == 0 or self.height == 0:
-            return result
-        for i in range(self.__height):
-            result += (str(self.print_symbol) * self.__width)
-            if i != self.__height - 1:
-                result += "\n"
-        return result
+            return ""
+        return ((("#" * self.width) + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """string representation"""
@@ -65,3 +60,18 @@ class Rectangle:
         """print a msg with an instance is deleted"""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
+
+        def bigger_or_equal(rect_1, rect_2):
+            rect_1 = Rectangle()
+            rect_2 = Rectangle()
+            if not isInstance(rect_1, Rectangle):
+                raise TypeError("rect_1 must be an instance of Rectangle")
+            if not isInstance(rect_2, Rectangle):
+                raise TypeError("rect_2 must be an instance of Rectsngle")
+            if area(rect_1 == area(rect_2):
+                    return rect_1
+            elif area(rect_1) > area(rect_2):
+                return rect_1
+            else:
+                return (rect_2)
+

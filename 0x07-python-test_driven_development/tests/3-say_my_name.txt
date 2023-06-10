@@ -1,0 +1,37 @@
+The ``3-say_my_name`` module
+===============================
+
+using ``say_my_name``
+-----------------------
+
+say_my_name prints My name is <first name> <last name>
+provided that:
+first_name and last_name are strings
+
+Usage:
+======
+
+Import the ``say_my_name`` from ``3-say_my_name``
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Test for two names:
+    >>> say_my_name("some", "one")
+    'My name is some one'
+
+Test with a string and integer as last_name:
+    >>> say_my_name("some", 1)   
+    Traceback (most recent call last):
+        raise TypeError("last_name must be a string")
+    TypeError: last_name must be a string
+
+Test with a boolean and a string:
+    >>> say_my_name(False, "person") 
+    Traceback (most recent call last):
+        raise TypeError("first_name must be a string")
+    TypeError: first_name must be a string
+    
+Test with two no-string values:
+    >>> say_my_name(False, 10.8) 
+    Traceback (most recent call last):
+        raise TypeError("first_name must be a string")
+    TypeError: first_name must be a string

@@ -1,0 +1,36 @@
+
+The ``1-my_list.py`` module
+===========================
+
+using ``MyList``
+---------------
+
+MyList inherits from list and prints in ascending order
+
+Usage:
+======
+Import MyList from 1-my_list module
+>>> MyList = __import__("1-my_list").MyList
+
+#Test for positive numbers:
+    >>> my_list = MyList()
+    >>> my_list.append(8)
+    >>> my_list.append(2)
+    >>> my_list.append(9)
+    >>> my_list.print_sorted()
+    [2, 8, 9]
+
+Test for both positve and negative numbers:
+    >>> my_list.append(-89)    
+    >>> my_list.append(-76) 
+    >>> my_list.append(-82) 
+    >>> my_list.print_sorted()
+    [-89, -82, -76, 2, 8, 9]
+
+Test for decimals:
+    >>> my_list.append(-92)    
+    >>> my_list.append(108) 
+    >>> my_list.append(35.7) 
+    >>> my_list.print_sorted() 
+    [-92, -89, -82, -76, 2, 8, 9, 35.7, 108]
+

@@ -8,6 +8,7 @@ class BaseGeometry:
         """public instance method for area calculations"""
         raise Exception("area() is not implemented")
 
+    @staticmethod
     def integer_validator(self, name, value):
         """vaidates Value"""
         if type(value) is not int:
@@ -18,7 +19,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """Inherits from BaseGeometry Class"""
-    def __init__(self, width, height):
+    def __init__(width, height):
         """validate Width and Height"""
         self.integer_validator(self, 'width', width)
         self.__width = width

@@ -1,0 +1,26 @@
+The ``7-base_geometry.py`` module
+===========================
+
+using ``BaseGeometry``
+---------------
+
+Usage:
+======
+Import BaseGeometry from 7-base_geometry module
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> geo = BaseGeometry()
+
+Test for success:
+    >>> geo.integer_validator("some_name", 156)
+
+Test for value as a string:
+    >>> geo.integer_validator("some_name", '156') 
+    Traceback (most recent call last):
+    TypeError: some_name must be an integer
+
+Test for value being less than zero:
+TypeError: <value> must be an integer
+    >>> geo.integer_validator("some_name", -156)  
+    Traceback (most recent call last):
+        raise ValueError("<value> must be greater than 0")
+    ValueError: some_name must be greater than 0

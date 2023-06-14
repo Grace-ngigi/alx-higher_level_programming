@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """class Student defines a student by Public instance attributes"""
 
 

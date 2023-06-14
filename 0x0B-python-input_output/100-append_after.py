@@ -12,4 +12,3 @@ def append_after(filename="", search_string="", new_string=""):
                 ffile.write(line + new_string)
             else:
                 ffile.write(line)
-

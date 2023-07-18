@@ -1,2 +1,2 @@
--- list table
-SHOW CREATE TABLE hbtn_0c_0.first_table;
+-- print full desc of a table
+SHOW CREATE TABLE first_table;

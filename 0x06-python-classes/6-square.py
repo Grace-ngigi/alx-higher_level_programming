@@ -30,7 +30,7 @@ class Square:
     @property
     def position(self):
         "define private variable position"""
-        return elf.__position
+        return self.__position
 
     @position.setter
     def position(self, value):

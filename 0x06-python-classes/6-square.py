@@ -32,30 +32,24 @@ class Square:
         "define private variable position"""
         return self.__position
 
+    """property setter to set position"""
     @position.setter
     def position(self, value):
-        if type(value) != tuple:
-            raise TypeError("position must be a tuple of 2 position integers")
-        elif len(value) != 2:
+        """check if value is a tuple of 2 positive integers"""
+        if not (isinstance(value, tuple) and len(value) == 2
+                and all(isinstance(x, int) and x >= 0 for x in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif isinstance(value[0], int) is False:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
-    def area(self):
-        """find area of the sqaure"""
-        return self.__size ** 2
-
+    """public instance method"""
     def my_print(self):
-        """print the ssqaure"""
         if self.__size == 0:
             print()
             return
-            for i in range(self.__size):
-                print()
-            for items in range(self.__size):
-                print(" " * self.__position[0], end="")
-                print("#" * self.__size)
+        if self.position[1] > 0:
+            print("\n" * self.position[1], end="")
+
+        for i in range(self.__size):
+            if self.position[0] > 0:
+                print(" " * self.position[0], end="")
+            print("#" * self.__size)

@@ -64,7 +64,7 @@ class SinglyLinkedList:
         Attributes:
             head (Node): The head (first node) of the linked list.
         """
-        self.head = None
+        self.__head = None
 
     def sorted_insert(self, value):
         """
@@ -81,16 +81,17 @@ class SinglyLinkedList:
         """
         new_node = Node(value)
 
-        if self.head is None:
-            self.head = new_node
+        if self.__head is None:
+            new_node.next_node = None
+            self.__head = new_node
             return
 
-        if value < self.head.data:
-            new_node.next_node = self.head
-            self.head = new_node
+        if value < self.__head.data:
+            new_node.next_node = self.__head
+            self.__head = new_node
             return
 
-        current = self.head
+        current = self.__head
         while current.next_node is not None and current.next_node.data < value:
             current = current.next_node
 
@@ -104,9 +105,9 @@ class SinglyLinkedList:
         Returns:
             str: A string representation of the linked list.
         """
-        result = ""
-        current = self.head
+        result = []
+        current = self.__head
         while current:
-            result += str(current.data) + "\n"
+            result.append(str(current.data))
             current = current.next_node
-        return result.strip()
+        return ('\n'.join(result))

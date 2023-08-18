@@ -58,14 +58,20 @@ class Square:
         """print a string representation of the square in stdout"""
         if self.__size == 0:
             return ""
+
         lines = []
         if self.position[1] > 0:
             lines.append("\n" * self.position[1])
 
-        for i in range(self.__size):
+        for i in range(self.__size - 1):
             if self.position[0] > 0:
-                lines.append(" " * self.position[0] + "#" * self.__size)
+                lines.append(" " * self.position[0] + "#" * self.__size + "\n")
             else:
-                lines.append("#" * self.__size)
+                lines.append("#" * self.__size + "\n")
 
-        return '\n'.join(lines)
+        if self.position[0] > 0:
+            lines.append(" " * self.position[0] + "#" * self.__size + "\n")
+        else:
+            lines.append("#" * self.__size + "\n")
+
+        return ''.join(lines).rstrip()

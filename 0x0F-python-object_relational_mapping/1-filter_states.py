@@ -8,13 +8,13 @@ def list_states(username, password, database):
     """list only states with a name starting with N"""
     try:
         conn = MySQLdb.connect(host="localhost",
-                             port=3306,
-                             user=username,
-                             passwd=password,
-                             db=database)
+                               port=3306,
+                               user=username,
+                               passwd=password,
+                               db=database)
         cursor = conn.cursor()
-        query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
-        cursor.execute(query)
+        cursor.execute("""SELECT * FROM states WHERE name
+        LIKE BINARY 'N%' ORDER BY id ASC""")
         rows = cursor.fetchall()
         for row in rows:
             print(row)

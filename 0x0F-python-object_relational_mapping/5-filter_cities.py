@@ -20,8 +20,7 @@ def display_values(username, password, database, state):
                        WHERE states.name = %s\
                        ORDER BY cities.id ASC", (state,))
         rows = cursor.fetchall()
-        for row in rows:
-            print(row)
+        print(", ".join([row[0] for row in rows]))
 
     except MySQLdb.Error as e:
         print("MySQL Error: ", e)

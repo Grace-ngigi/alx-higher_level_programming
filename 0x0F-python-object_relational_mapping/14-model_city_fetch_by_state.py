@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
     cities = session.query(City, State)\
-                    .filter(City.state_id)\
+                    .filter(City.state_id == State.id)\
                     .order_by(City.id)
 
     for city, state in cities:

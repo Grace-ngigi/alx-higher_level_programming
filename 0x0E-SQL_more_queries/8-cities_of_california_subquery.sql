@@ -1,5 +1,6 @@
--- Get the state_id for California from the states table using a subquery
-SELECT id INTO @california_id FROM states WHERE name = 'California';
-
--- Fetch all cities of California using the state_id obtained from the subquery
-SELECT * FROM cities WHERE state_id = @california_id ORDER BY id ASC;
+-- lists all cities of California fron db hbtn_0d_usa
+-- result sorted in ascending order by cities.id
+-- not allowed to use join
+SELECT id, name FROM cities WHERE state_id IN 
+(SELECT id FROM states WHERE name = "California")
+ORDER BY cities.id ASC;

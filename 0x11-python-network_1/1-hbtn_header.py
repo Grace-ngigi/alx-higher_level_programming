@@ -12,4 +12,3 @@ if __name__ == "__main__":
             print(dict(res.headers).get("X-Request-Id"))
     except urllib.error.URLEror as e:
         print(f"Error: {e}")
-    

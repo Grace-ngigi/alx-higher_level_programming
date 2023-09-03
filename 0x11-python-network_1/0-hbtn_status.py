@@ -11,6 +11,7 @@ if __name__ == "__main__":
             print(f"Body response:")
             print('\t- type: {}'.format(type(data)))
             print('\t- content: {}'.format(data))
-            print('\t- utf8 content: {}'.format(data.decode("utf-8", "replace")))
+            print('\t- utf8 content: {}'
+                  .format(data.decode("utf-8", "replace")))
     except urllib.error.URLError as e:
         print(f"Error: {e}")

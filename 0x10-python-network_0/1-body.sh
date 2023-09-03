@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 # take url send get request dsply body
-curl -s -L -X GET $1
+curl -s "$1" -X GET -L 

@@ -16,12 +16,12 @@ if __name__ == "__main__":
     auth = (username, passwd)
 
     try:
-        res = requests.get(url, auth = auth)
+        res = requests.get(url, auth=auth)
         if res.status_code == 200:
             data = res.json()
             user_id = data.get("id")
             print(user_id)
         else:
-            print("Request failed with status code: {}".format(res.status_code))
+            print("Request failed: {}".format(res.status_code))
     except requests.exceptions.RequestException as e:
         print("Request Error: {}".format(e))

@@ -15,7 +15,7 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         letter = sys.argv[1]
     else:
-        letter =""
+        letter = ""
 
     q = {"q": letter}
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
         res = requests.post(url, data=q)
         data = res.json()
 
-        if data:
+        if data is not {}:
             print("[{}] {}".format(data.get("id"), data.get("name")))
         else:
             print("No result")

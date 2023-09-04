@@ -20,7 +20,7 @@ if __name__ == "__main__":
     q = {"q": letter}
 
     try:
-        res = requests.post(url, params=q)
+        res = requests.post(url, data=q)
         data = res.json()
 
         if data:

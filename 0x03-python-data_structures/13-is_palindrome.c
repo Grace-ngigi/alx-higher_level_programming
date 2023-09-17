@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *fast, *slow, *current, *next, *prev, *first, *second;
 
-	if (!*head)
+	if (!*head || (*head)->next == NULL)
 		return (1);
 
 	/* find the middle */

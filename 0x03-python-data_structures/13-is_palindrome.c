@@ -16,7 +16,7 @@ int is_palindrome(listint_t **head)
 
 	/* find the middle */
 	slow = fast = *head;
-	while (slow != NULL && fast->next != NULL)
+	while (slow != NULL && fast != NULL)
 	{
 		slow = slow->next;
 		fast = fast->next->next;

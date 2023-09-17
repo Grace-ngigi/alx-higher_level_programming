@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 	}
 
 	/* Compare the two halves */
-	*head = prev;
+	/**head = prev;*/
 	first = *head;
 	second = prev;
 	while (first != NULL && second != NULL)

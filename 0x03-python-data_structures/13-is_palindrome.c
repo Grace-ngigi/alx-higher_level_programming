@@ -16,12 +16,15 @@ int is_palindrome(listint_t **head)
 
 	/* find the middle */
 	slow = fast = *head;
-	while (slow != NULL && fast != NULL)
+	while (slow != NULL && fast->next != NULL)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
 	}
 
+	/* for odd numbers */
+	if (fast != NULL)
+		slow = slow->next;
 	/* reverse the second half */
 	current = slow;
 	next = prev = NULL;

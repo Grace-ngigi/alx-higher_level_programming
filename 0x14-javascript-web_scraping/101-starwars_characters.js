@@ -12,7 +12,7 @@ request.get(apiUrl, (error, response, body) => {
     const movieData = JSON.parse(body);
     const characterUrls = movieData.characters;
 
-    function fetchCharacter(index) {
+    function fetchCharacter (index) {
       if (index < characterUrls.length) {
         request.get(characterUrls[index], (err, res, characterBody) => {
           if (err) {
